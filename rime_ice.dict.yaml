@@ -13,7 +13,12 @@ import_tables:
   - cn_dicts/others   # 一些杂项
 
   # 建议把扩展词库放到下面，有重复词条时，最上面的权重生效
-  # - cn_dicts/mydict
+  # 搜狗标准词库
+  - cn_dicts/sougoustandard
+  # 搜狗流行新词
+  - cn_dicts/sougouwebnewword
+  # 自定义词库
+  - cn_dicts/ljf
 ...
 
 # 按需启用：
