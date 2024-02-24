@@ -45,6 +45,18 @@
 又有	uu
 又又又	uuu
 又双叒叕	uuuu
+不一定  byd
+你看看  nkk
+没有    my  1
+为什么	wsm
+是不是	sbs
+没什么	msm
+有时候	ysh
+有时候	yshh
+有时候	yshou
+什么的	smd
+什么是	sms
+什么啊	sma
 
 go	go
 Golang	golang
@@ -60,3 +72,6 @@ gone	gone
 Go程	gocheng
 code	code
 SOHO	soho
+Manjaro manjaro
+Ubuntu ubuntu
+Deepin deepin
