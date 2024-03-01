@@ -6,7 +6,7 @@
 schema:
   schema_id: rime_ice
   name: 雾凇拼音
-  version: "2024-02-24"
+  version: "2024-02-25"
   author:
     - Dvel
   description: |
@@ -72,13 +72,13 @@ engine:
   filters:
     - lua_filter@corrector                          # 错音错字提示
     - reverse_lookup_filter@radical_reverse_lookup  # 部件拆字滤镜
-    - lua_filter@search@radical_pinyin              # 部件拆字辅码
     - lua_filter@autocap_filter                     # 英文自动大写
     - lua_filter@v_filter                           # v 模式 symbols 优先
     - lua_filter@pin_cand_filter                    # 置顶候选项（顺序要求：置顶候选项 > Emoji > 简繁切换）
     - lua_filter@long_word_filter                   # 长词优先（顺序要求：长词优先 > Emoji）
     - simplifier@emoji                              # Emoji
     - simplifier@traditionalize                     # 简繁切换
+    - lua_filter@search@radical_pinyin              # 部件拆字辅码
     - lua_filter@reduce_english_filter              # 降低部分英语单词在候选项的位置
     - uniquifier                                    # 去重
 
@@ -237,7 +237,7 @@ pin_cand_filter:
   - cai	才
   - cong	从
   - chu	出
-  - ba	吧 把
+  - ba	把 吧
   - bu	不
   - bing	并
   - bei	被
@@ -249,6 +249,7 @@ pin_cand_filter:
   - ma	吗 嘛 妈
   - mei	没
   - mai	买 卖
+  - reng	仍 扔
   # ta、na
   - ta men	他们 她们 它们
   - tm	他们 她们 它们
@@ -484,6 +485,8 @@ speller:
     # - derive/([qypjlxbnm])in$/$1ni/  # qni → qin
     # # un
     # - derive/([qrtysdghjklzxc])un$/$1nu/  # qnu → qun
+    # # ian
+    # - derive/([qtpdjlxbnm])ian$/$1ain/
 ########## END
     # ai
     - derive/^([wghk])ai$/$1ia/  # wia → wai
@@ -515,9 +518,6 @@ speller:
     - derive/([rtsghkzc])ui$/$1iu/
     # iu
     - derive/([qjlxnm])iu$/$1ui/
-    # ian
-    - derive/([qtpdjlxbnm])ian$/$1ain/
-    # - derive/([qtpdjlxbnm])ian$/$1ina/ # 和「李娜、蒂娜、缉拿」等常用词有冲突
     # iang
     - derive/([qjlxn])iang$/$1aing/
     - derive/([qjlxn])iang$/$1inag/
